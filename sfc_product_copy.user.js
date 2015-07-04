@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Mikelarg copy product SFC
-// @version      1.0
+// @version      1.0.1
 // @description  Product Copy SFC
 // @author       Mikelarg
 // @match        https://fulfill.sfcservice.com/*
@@ -34,6 +34,7 @@ jQuery(document).ready(function() {
 	});
 	jQuery('#set_button').click(function () {
 		var productString = window.prompt("Set product string", "");
-		set_product_from_string(productString);
+		if(productString!="") set_product_from_string(productString);
+		jQuery('textarea, input[type=text]').trigger('submit');
 	});
 });

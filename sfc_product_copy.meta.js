@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Mikelarg copy product SFC
-// @version      1.0
+// @version      1.0.1
 // @description  Product Copy SFC
 // @author       Mikelarg
 // @match        https://fulfill.sfcservice.com/*
