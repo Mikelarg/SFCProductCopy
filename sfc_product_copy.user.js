@@ -25,6 +25,7 @@ function set_product_from_string(jsonString) {
     	var product = products[i];
     	jQuery('textarea[name='+product.name+'], input[name='+product.name+']').val(product.value);
     }
+    jQuery('textarea, input[type=text]').trigger('submit');
 }
 jQuery(document).ready(function() {
 	jQuery('body').prepend('<div id="copy_button" style="cursor: pointer; position: fixed;background-color: black;color: white;padding: 5px 20px; border-radius: 2px;  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); z-index: 1000; right: 0.5%; bottom: 5px;">Copy</div>');
@@ -35,6 +36,5 @@ jQuery(document).ready(function() {
 	jQuery('#set_button').click(function () {
 		var productString = window.prompt("Set product string", "");
 		if(productString!="") set_product_from_string(productString);
-		jQuery('textarea, input[type=text]').trigger('submit');
 	});
 });
