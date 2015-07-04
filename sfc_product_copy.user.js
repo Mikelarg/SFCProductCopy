@@ -24,6 +24,7 @@ function set_product_from_string(jsonString) {
     for (var i = 0; i < products.length; i++) {
     	var product = products[i];
     	jQuery('textarea[name='+product.name+'], input[name='+product.name+']').val(product.value);
+    	jQuery('textarea[name='+product.name+'], input[name='+product.name+']').trigger('submit');
     }
 }
 jQuery(document).ready(function() {
@@ -35,6 +36,5 @@ jQuery(document).ready(function() {
 	jQuery('#set_button').click(function () {
 		var productString = window.prompt("Set product string", "");
 		if(productString!="") set_product_from_string(productString);
-		jQuery('textarea, input[type=text]').trigger('submit');
 	});
 });
